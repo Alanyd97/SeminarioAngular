@@ -1,0 +1,30 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">code</th>
+        <th scope="col">name</th>
+        <th scope="col">type</th>
+        <th scope="col">price</th>
+        <th scope="col">stock</th>
+        <th scope="col">image</th>
+        <th scope="col">quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let beer of beerList; index as i" [ngClass]="{'cleareance' : beer.cleareance}">
+        <th scope="row">{{beer.code}}</th>
+        <td>{{beer.name}}</td>
+        <td>{{beer.type | uppercase}}</td>
+        <td>{{beer.price | currency}}</td>
+        <td *ngIf="beer.stock == 0"><span class="badge bg-danger">Sin Stock</span></td>
+        <td *ngIf="beer.stock > 0">{{beer.stock}}</td>
+        <td><img class="img-fluid  img-thumbnail img"[src]="beer.image" [alt]="beer.name"></td>
+        <td>
+          <button class="btn"  (click)="minusCuantity(beer)" >-</button>
+          <input type="number" [(ngModel)]="beer.quantity" class="plus-input">
+          <button class="btn" (click)="plusCuantity(beer)">+</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
