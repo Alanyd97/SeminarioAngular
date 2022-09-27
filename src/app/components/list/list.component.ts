@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShoppingCartServiceService } from 'src/app/pages/shopping-cart/service/shopping-cart-service.service';
 import { Beer } from './beer';
 
 @Component({
@@ -7,14 +8,14 @@ import { Beer } from './beer';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  
+  limit: string;
   beerList: Beer[] = [
     {
       code:"123",
       name: "Amarga",
       type: "IPA",
       price: 200,
-      stock: 24,
+      stock: 2,
       image: "https://www.craftmoments.com.ar/wp-content/uploads/2017/02/chanchingo_ipa.png",
       cleareance: false,
       quantity:0
@@ -31,19 +32,15 @@ export class ListComponent implements OnInit {
     }
   ]
 
-  constructor() {
-   }
+  constructor(private beerShoppingService: ShoppingCartServiceService) {}
 
   ngOnInit(): void {
   }
-
-  plusCuantity(beer: Beer): void{
-    if (beer.quantity < beer.stock)
-      beer.quantity++;
-  }
-  minusCuantity(beer: Beer): void{
-    if (beer.quantity > 0)
-      beer.quantity--;
+  setLimitReached(s:string){
+    this.limit=s;
   }
 
+  addToCart(beer:Beer){
+    this.beerShoppingService.addToCart(beer);
+  }
 }

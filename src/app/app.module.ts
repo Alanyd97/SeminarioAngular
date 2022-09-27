@@ -18,6 +18,7 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatListModule } from '@angular/material/list';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
+import { InputNumberComponent } from './components/input-number/input-number.component';
 
 
 
@@ -28,6 +29,7 @@ import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.compo
     ShoppingCartComponent,
     ListComponent,
     MainNavComponent,
+    InputNumberComponent,
   ],
   imports: [
     BrowserModule,

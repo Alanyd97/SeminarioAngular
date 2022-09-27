@@ -8,6 +8,7 @@
         <th scope="col">stock</th>
         <th scope="col">image</th>
         <th scope="col">quantity</th>
+        <th scope="col">buy</th>
       </tr>
     </thead>
     <tbody>
@@ -20,9 +21,12 @@
         <td *ngIf="beer.stock > 0">{{beer.stock}}</td>
         <td><img class="img-fluid  img-thumbnail img"[src]="beer.image" [alt]="beer.name"></td>
         <td>
-          <button class="btn"  (click)="minusCuantity(beer)" >-</button>
-          <input type="number" [(ngModel)]="beer.quantity" class="plus-input">
-          <button class="btn" (click)="plusCuantity(beer)">+</button>
+            <app-input-number (limit)="setLimitReached($event)" [(quantity)]="beer.quantity" [max]="beer.stock"  *ngIf="beer.stock"></app-input-number>
+            Cant: {{beer.quantity}}
+           <p *ngIf="beer.quantity == beer.stock && beer.stock > 0" style="color: red;"> {{limit}}</p>
+        </td>
+        <td>
+            <button class="btn btn-primary">Buy</button>
         </td>
       </tr>
     </tbody>
