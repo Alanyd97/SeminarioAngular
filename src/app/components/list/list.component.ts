@@ -9,32 +9,14 @@ import { Beer } from './beer';
 })
 export class ListComponent implements OnInit {
   limit: string;
-  beerList: Beer[] = [
-    {
-      code:"123",
-      name: "Amarga",
-      type: "IPA",
-      price: 200,
-      stock: 2,
-      image: "https://www.craftmoments.com.ar/wp-content/uploads/2017/02/chanchingo_ipa.png",
-      cleareance: false,
-      quantity:0
-    },
-    {
-      code:"12223",
-      name: "Amarga",
-      type: "Barley",
-      price: 200,
-      stock: 0,
-      image: "https://www.craftmoments.com.ar/wp-content/uploads/2017/02/chanchingo_ipa.png",
-      cleareance: true,
-      quantity:0
-    }
-  ]
+  beerList: Beer[] = []
 
   constructor(private beerShoppingService: ShoppingCartServiceService) {}
 
   ngOnInit(): void {
+    this.beerShoppingService.getAll().subscribe(
+      response => this.beerList = response
+    );
   }
   setLimitReached(s:string){
     this.limit=s;
@@ -42,5 +24,7 @@ export class ListComponent implements OnInit {
 
   addToCart(beer:Beer){
     this.beerShoppingService.addToCart(beer);
+    beer.stock -= beer.quantity;
+    beer.quantity = 0;
   }
 }

@@ -19,6 +19,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatListModule } from '@angular/material/list';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { InputNumberComponent } from './components/input-number/input-number.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -43,6 +44,7 @@ import { InputNumberComponent } from './components/input-number/input-number.com
     FormsModule,
     LayoutModule,
     MatListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

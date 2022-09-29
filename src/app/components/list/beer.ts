@@ -1,4 +1,4 @@
-export interface Beer{
+export interface IBeer{
     code: string,
     name: string,
     type: string,
@@ -6,5 +6,15 @@ export interface Beer{
     stock: number,
     image: string,
     cleareance:boolean
-    quantity:number
+}
+
+export class Beer implements IBeer{
+    code: string;
+    name: string;
+    type: string;
+    price: number;
+    stock: number;
+    image: string;
+    cleareance: boolean;
+    quantity: number
 }

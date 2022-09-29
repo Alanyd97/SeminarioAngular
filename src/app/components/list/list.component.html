@@ -26,7 +26,7 @@
            <p *ngIf="beer.quantity == beer.stock && beer.stock > 0" style="color: red;"> {{limit}}</p>
         </td>
         <td>
-            <button class="btn btn-primary">Buy</button>
+            <button class="btn btn-primary" (click)="addToCart(beer)">Buy</button>
         </td>
       </tr>
     </tbody>
