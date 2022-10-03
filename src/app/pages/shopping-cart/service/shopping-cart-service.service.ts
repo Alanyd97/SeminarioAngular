@@ -11,29 +11,26 @@ const URL:string = "https://63343d0790a73d0fedea5500.mockapi.io/beers ";
 
 export class ShoppingCartServiceService {
 
-
-  private cartList : Beer[] = [];
-  _cartListBehavior: BehaviorSubject<Beer[]> = new BehaviorSubject(this.cartList);
+  private beerList : Beer[] = [];
+  _beerListBehavior: BehaviorSubject<Beer[]> = new BehaviorSubject(this.beerList);
   constructor(private http: HttpClient) { }
 
   addToCart(beer: Beer) {
     let item: Beer | undefined;
-    item = this.cartList.find((v1) => v1.name == beer.name);
+    item = this.beerList.find((v1) => v1.name == beer.name);
     if(!item) {
-      this.cartList.push({ ... beer});
+      this.beerList.push({ ... beer});
     } else {
       item.quantity += beer.quantity;
     }
-    this._cartListBehavior.next(this.cartList)
+    this._beerListBehavior.next(this.beerList)
   }
 
   getCart():Beer[]{
-    return this.cartList;
+    return this.beerList;
   }
 
   public getAll(): Observable<Beer[]>{
-    console.log("entre");
-    
     return this.http.get<Beer[]>(URL)
     .pipe(
       tap((beers) => beers.forEach(b=> b.quantity = 0))

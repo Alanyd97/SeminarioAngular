@@ -9,10 +9,10 @@ import { ShoppingCartServiceService } from './service/shopping-cart-service.serv
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
-  cartList$ : Observable<Beer[]>;
+  cartList$ : Beer[];
   constructor(private beerShoppingService: ShoppingCartServiceService) {
-      //this.cartList$ = beerShoppingService._cartListBehavior.asObservable();
-      this.cartList$ = beerShoppingService.getAll();
+    this.cartList$ = beerShoppingService.getCart();
+       
    }
 
   ngOnInit(): void {
