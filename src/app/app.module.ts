@@ -20,6 +20,10 @@ import { MatListModule } from '@angular/material/list';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { InputNumberComponent } from './components/input-number/input-number.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MotosComponent } from './pages/motos/motos.component';
+import { CardComponent } from './components/card/card.component';
+import { CarrouselComponent } from './components/carrousel/carrousel.component';
+import { ControlComponent } from './components/carrousel/control/control.component';
 
 
 
@@ -31,6 +35,10 @@ import { HttpClientModule } from '@angular/common/http';
     ListComponent,
     MainNavComponent,
     InputNumberComponent,
+    MotosComponent,
+    CardComponent,
+    CarrouselComponent,
+    ControlComponent,
   ],
   imports: [
     BrowserModule,

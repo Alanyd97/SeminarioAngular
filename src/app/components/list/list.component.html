@@ -11,8 +11,8 @@
         <th scope="col">buy</th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let beer of beerList; index as i" [ngClass]="{'cleareance' : beer.cleareance}">
+    <tbody><tr>
+     <!--   *ngFor="let beer of beerList; index as i" [ngClass]="{'cleareance' : beer.cleareance}"> 
         <th scope="row">{{beer.code}}</th>
         <td>{{beer.name}}</td>
         <td>{{beer.type | uppercase}}</td>
@@ -27,7 +27,7 @@
         </td>
         <td>
             <button class="btn btn-primary" (click)="addToCart(beer)">Buy</button>
-        </td>
+        </td>-->
       </tr>
     </tbody>
   </table>

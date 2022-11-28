@@ -8,7 +8,7 @@ export interface IBeer{
     cleareance:boolean
 }
 
-export class Beer implements IBeer{
+export class Beer{
     code: string;
     name: string;
     type: string;
@@ -16,5 +16,5 @@ export class Beer implements IBeer{
     stock: number;
     image: string;
     cleareance: boolean;
-    quantity: number
+    quantity: number;
 }
