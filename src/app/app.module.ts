@@ -17,10 +17,11 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
-import { MotosComponent } from './pages/motos/motos.component';
+import { MotosComponent } from './components/motos/motos.component';
 import { CardComponent } from './components/card/card.component';
 import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { ControlComponent } from './components/carrousel/control/control.component';
+import { DetalleComponent } from './pages/detalle/detalle.component';
 
 
 
@@ -33,6 +34,7 @@ import { ControlComponent } from './components/carrousel/control/control.compone
     CardComponent,
     CarrouselComponent,
     ControlComponent,
+    DetalleComponent,
   ],
   imports: [
     BrowserModule,

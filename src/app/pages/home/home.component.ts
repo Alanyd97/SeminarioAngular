@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IMoto } from 'src/app/models/moto';
+import { MotoService } from 'src/app/service/moto-service.service';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-
+  motos:IMoto[] = [];
+  winners:IMoto[] = [];
+  constructor(private motoService:MotoService) { 
+    this.motoService.getAll().subscribe(a=> 
+      {
+        this.motos = a;
+        this.winners = this.getFirstsPlaces(a);
+        console.log("winners", this.winners);
+      }
+      );
+  }
   ngOnInit(): void {
-    
   }
 
+  getFirstsPlaces(motos:IMoto[]): IMoto[]{
+    const firstsPlaces =motos.filter(m =>  m.lastRacePlace != "");
+    return firstsPlaces;
+  }
 }

@@ -4,6 +4,6 @@
     <div class="card-body">
       <h5 class="card-title">{{moto.name}}</h5>
       <p class="card-text">{{moto.type}}</p>
-      <a  class="btn btn-primary">Detalle</a>
+      <a  class="btn btn-primary" [routerLink]="['/detail', moto.id]" >Detalle</a>
     </div>
   </div>

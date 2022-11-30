@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input, OnChanges } from '@angular/core';
+import { IMoto } from 'src/app/models/moto';
 
 @Component({
   selector: 'app-carrousel',
@@ -7,21 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarrouselComponent implements OnInit {
   
-  items : string[] = [
-    "https://enduro21.com/images/2022/november-2022/new-enduro-bike-what-do-you-do-first/2023_ktm_300_exc_first-ride_edit_img_6317.jpg",
-    "https://enduro21.com/images/2022/november-2022/pro-bike-eero-remes-fe350/eero_remes_bloms_mx_fe350_pro_bike_20221028-139a9618.jpg",
-    "https://enduro21.com/images/2022/november-2022/motos-pro-beta-390-rr-4t-racing-cristobal-guerrero/2022_beta_rr_racing_350_cristobal_guerrero0018.jpg"
-  ]
-  itemActual:string = "https://enduro21.com/images/2022/november-2022/new-enduro-bike-what-do-you-do-first/2023_ktm_300_exc_first-ride_edit_img_6317.jpg"
+  @Input()
+  items : IMoto[] =[];
+
+  itemActual:IMoto;
  
 
-  constructor() { }
+  constructor() {
+    console.log("constr", this.items);
+    
+   }
 
-  ngOnInit(): void {
+   ngOnInit(): void {
+    console.log("oninti",this.items);
+  }
+  ngOnChanges():void{
+    this.itemActual=this.items[0];
   }
 
   setItemActual(s:number){
-    this.itemActual = this.items[s];
+    console.log("pase");
+    if (this.itemActual)
+      this.itemActual = this.items[s];
   }
 
 
