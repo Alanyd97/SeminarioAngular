@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import { Observable, observable } from 'rxjs';
 import { Beer } from 'src/app/components/list/beer';
 import { ShoppingCartServiceService } from './service/shopping-cart-service.service';
@@ -22,4 +22,4 @@ export class ShoppingCartComponent implements OnInit {
 
   }
 
-}
+}*/

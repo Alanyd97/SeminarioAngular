@@ -1,1 +1,5 @@
-<app-card></app-card>
+<div class="row d-flex justify-content-between m-4">
+    <div class="col-4" *ngFor="let moto of motos" >
+        <app-card [moto]="moto"></app-card>
+    </div>
+</div>

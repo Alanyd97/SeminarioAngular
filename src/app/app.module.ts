@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ListComponent } from './components/list/list.component';
 import { FormsModule } from '@angular/forms';
 
 //Angular Material
@@ -17,8 +16,6 @@ import { MatDividerModule } from "@angular/material/divider";
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatListModule } from '@angular/material/list';
-import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
-import { InputNumberComponent } from './components/input-number/input-number.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MotosComponent } from './pages/motos/motos.component';
 import { CardComponent } from './components/card/card.component';
@@ -31,10 +28,7 @@ import { ControlComponent } from './components/carrousel/control/control.compone
   declarations: [
     AppComponent,
     HomeComponent,
-    ShoppingCartComponent,
-    ListComponent,
     MainNavComponent,
-    InputNumberComponent,
     MotosComponent,
     CardComponent,
     CarrouselComponent,

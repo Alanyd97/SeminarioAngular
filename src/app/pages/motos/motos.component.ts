@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IMoto } from 'src/app/models/moto';
+import { MotoService } from 'src/app/service/moto-service.service';
 
 @Component({
   selector: 'app-motos',
@@ -6,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./motos.component.css']
 })
 export class MotosComponent implements OnInit {
-
-  constructor() { }
+  motos:IMoto[] = [];
+  constructor(private motoService:MotoService) { 
+    this.motoService.getAll().subscribe(a=> this.motos = a);
+  }
 
   ngOnInit(): void {
   }

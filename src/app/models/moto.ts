@@ -1,13 +1,14 @@
 export interface IMoto{
-    code: string,
     name: string,
     type: string,
     image: string,
 }
 
-export class Moto{
-    code: string;
+export class MotoBlog implements IMoto{
     name: string;
     type: string;
     image: string;
+    blogTitle: string;
+    description: string;
+    date: string;
 }
