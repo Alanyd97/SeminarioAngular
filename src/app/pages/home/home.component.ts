@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IMoto } from 'src/app/models/moto';
-import { MotoService } from 'src/app/service/moto-service.service';
+import { MotoService } from 'src/app/service/moto/moto-service.service';
 
 @Component({
   selector: 'app-home',

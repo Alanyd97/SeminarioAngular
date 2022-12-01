@@ -1,9 +1,9 @@
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <a><img *ngIf="itemActual" class="d-block w-100" src="{{itemActual.image}}" alt="First slide"></a>
+        <a><img  *ngIf="itemActual" [routerLink]="['/detail', itemActual.id]" class="d-block w-100" src="{{itemActual.image}}" alt="First slide"></a>
       </div>
     </div>
-    <app-control *ngIf="items"(position)="setItemActual($event)" [items]="items.length" [type]="'prev'" [text]="'previus'" [modo]="false"></app-control>
-    <app-control *ngIf="items"(position)="setItemActual($event)" [items]="items.length" [type]="'next'" [modo]="true"></app-control>
+    <app-control *ngIf="items" (position)="setItemActual($event)" [items]="items.length" [type]="'prev'" [text]="'previus'" [modo]="false"></app-control>
+    <app-control *ngIf="items" (position)="setItemActual($event)" [items]="items.length" [type]="'next'" [modo]="true"></app-control>
   </div>

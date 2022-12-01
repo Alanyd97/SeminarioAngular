@@ -22,6 +22,7 @@ import { CardComponent } from './components/card/card.component';
 import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { ControlComponent } from './components/carrousel/control/control.component';
 import { DetalleComponent } from './pages/detalle/detalle.component';
+import { BetsComponent } from './pages/bets/bets.component';
 
 
 
@@ -35,6 +36,7 @@ import { DetalleComponent } from './pages/detalle/detalle.component';
     CarrouselComponent,
     ControlComponent,
     DetalleComponent,
+    BetsComponent,
   ],
   imports: [
     BrowserModule,

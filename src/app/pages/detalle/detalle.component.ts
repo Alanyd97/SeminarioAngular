@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 import { MotoBlog } from 'src/app/models/moto';
-import { MotoService } from 'src/app/service/moto-service.service';
+import { MotoService } from 'src/app/service/moto/moto-service.service';
 
 @Component({
   selector: 'app-detalle',
