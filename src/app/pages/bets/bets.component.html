@@ -7,6 +7,7 @@
                 <th scope="col">Ultima carrera</th>
                 <th scope="col">Tipo moto</th>
                 <th scope="col">Apuesta</th>
+                <th scope="col">Apostar</th>
                 <th scope="col">Detalle</th>
               </tr>
             </thead>
@@ -24,7 +25,11 @@
                     </div>
                 </td>
                 <td>{{c.type}}</td>
-                <td><input type="number" ></td>
+                <td>
+                  <input type="number" min="0" max="{{user.moneyAvailable}}" (change)="updateUserMoney($event, c.id)">
+                </td>
+                <td><button class="btn btn-primary" (click)="apostar(c.id, user)">Apostar</button></td>
+            
                 <td><button class="btn btn-primary"[routerLink]="['/detail', c.id]">Detalle</button></td>
               </tr>
             </tbody>
@@ -35,7 +40,7 @@
         Saldo disponible
       </h3>
       <h2>
-        {{user.moneyAvailable}}
+        {{user.moneyAvailable| currency}}
       </h2>
     </div>
 </div>

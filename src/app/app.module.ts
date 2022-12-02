@@ -23,6 +23,7 @@ import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { ControlComponent } from './components/carrousel/control/control.component';
 import { DetalleComponent } from './pages/detalle/detalle.component';
 import { BetsComponent } from './pages/bets/bets.component';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
 
 
 
@@ -37,6 +38,7 @@ import { BetsComponent } from './pages/bets/bets.component';
     ControlComponent,
     DetalleComponent,
     BetsComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@ const URL:string = "https://63343d0790a73d0fedea5500.mockapi.io/User";
 export class UserService {
   
   private user : User = new User;
-  _motoListBehavior: BehaviorSubject<User> = new BehaviorSubject(this.user);
+  _userBehavior: BehaviorSubject<User> = new BehaviorSubject(this.user);
   
   constructor(private http: HttpClient) { }
 
@@ -23,5 +23,20 @@ export class UserService {
     return this.http.get<User>(URL+"/"+id);
   }
 
+  public updateUserToSuscribers(u:User){
+    this._userBehavior.next(u)
+  }
+/*
+  addToCart(beer: Beer) {
+    let item: Beer | undefined;
+    item = this.beerList.find((v1) => v1.name == beer.name);
+    if(!item) {
+      this.beerList.push({ ... beer});
+    } else {
+      item.quantity += beer.quantity;
+    }
+    this._beerListBehavior.next(this.beerList)
+  }
+*/
 
 }
