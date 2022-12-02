@@ -1,20 +1,16 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from 'src/app/models/user';
 
+
+
+
+const URL:string = "https://63343d0790a73d0fedea5500.mockapi.io/User";
+
 @Injectable({
   providedIn: 'root'
 })
-
-
-const URL:string = "https://63343d0790a73d0fedea5500.mockapi.io/Motos";
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-  })
-};
 export class UserService {
   
   private user : User = new User;

@@ -1,1 +1,41 @@
-<p>bets works!</p>
+<div class="row d-flex justify-content-center mt-4">
+    <div class="col-7">
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Competidor</th>
+                <th scope="col">Ultima carrera</th>
+                <th scope="col">Tipo moto</th>
+                <th scope="col">Apuesta</th>
+                <th scope="col">Detalle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of competidores">
+                <td>{{c.name}}</td>
+                <td >
+                    <div class="alert" 
+                        [ngClass]="{
+                            'alert-success': c.lastRacePlace === 'first', 
+                            'alert-primary' : c.lastRacePlace === 'second', 
+                            'alert-warning' : c.lastRacePlace === 'third'}" 
+                        role="alert">
+                        {{c.lastRacePlace}}
+                    </div>
+                </td>
+                <td>{{c.type}}</td>
+                <td><input type="number" ></td>
+                <td><button class="btn btn-primary"[routerLink]="['/detail', c.id]">Detalle</button></td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-3 ml-3">
+      <h3>
+        Saldo disponible
+      </h3>
+      <h2>
+        {{user.moneyAvailable}}
+      </h2>
+    </div>
+</div>

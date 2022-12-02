@@ -1,6 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { IMoto } from 'src/app/models/moto';
-import { MotoService } from 'src/app/service/moto-service.service';
 
 @Component({
   selector: 'app-motos',
